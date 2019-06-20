@@ -10,8 +10,8 @@
 -------
 ####RGB相机实时高精度人嘴唇三维重建  
 **背景**：实时人脸重建系统局部精度低；高精度人脸局部区域重建算法复杂，硬件要求高；嘴唇是人脸上形变较大的区域，三维重建嘴唇有挑战性。
-<div float=left><img src="https://github.com/4292014/4292014.github.io/blob/master/real-time-face-recon.PNG"></div>
-<div float=right><img src="https://github.com/4292014/4292014.github.io/blob/master/high-fidelity-recon.PNG"></div>  
+<span float=left><img src="https://github.com/4292014/4292014.github.io/blob/master/real-time-face-recon.PNG"></span>
+<span float=right><img src="https://github.com/4292014/4292014.github.io/blob/master/high-fidelity-recon.PNG"></span>  
 
 **目标**：嘴唇区域高精度重建；实时；硬件要求低(仅输入RGB图像)
   

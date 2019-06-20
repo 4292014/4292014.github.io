@@ -1,37 +1,21 @@
-## Welcome to GitHub Pages
+前言
+------
+我的硕士课题是人脸局部区域三维重建；分为两部分内容：
+>1. RGB相机实时高精度人嘴唇三维重建
+>2. RGB图像眼镜三维重建  
 
-You can use the [editor on GitHub](https://github.com/4292014/4292014.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+下文按照如下方式组织，首先分别介绍两项工作的背景，项目框架，涉及到的关键算法；接下来详细描述项目的工作内容，遇到的问题和解决方法。
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+概述
+-------
+####RGB相机实时高精度人嘴唇三维重建  
+**背景**：实时人脸重建系统局部精度低；高精度人脸局部区域重建算法复杂，硬件要求高；嘴唇是人脸上形变较大的区域，三维重建嘴唇有挑战性。
+[实时人脸三维重建系统嘴唇区域效果](4292014.github.io/real-time-face-recon.png)
+[高精度嘴唇重建效果及硬件](4292014.github.io/high-fidelity-recon.png)
+**目标**：嘴唇区域高精度重建；实时；硬件要求低(仅输入RGB图像)
+  
+---------
+####RGB图像眼镜三维重建
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/4292014/4292014.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+实现细节
+------

@@ -30,7 +30,7 @@
 >2. B样条曲线拟合提取精细唇线。精细唇线不仅可以用于嘴唇三维重建，还可以用在自动上唇妆等应用中。
 >3. 已有3d人脸形变模型、人脸特征点检测和基于神经网络的人脸重建方法；用2中精细唇线改善原重建效果，得嘴唇高精度重建结果。即在精细唇线上找三维嘴唇顶点的对应点，优化求解人脸形变模型的线性组合系数。  
 
-<img src="imgs/pipeline.PNG" width="60%">    
+<img src="imgs/pipeline-1.PNG" width="60%">    
 
 **关键算法**：  
 >1. 训练和使用基于caffe(C++)的边缘检测神经网络
@@ -92,3 +92,9 @@ references
 [3]Maninchedda F , Oswald M R , Pollefeys M . Fast 3D Reconstruction of Faces with Glasses[C]// 2017 IEEE Conference on Computer Vision and Pattern Recognition (CVPR). IEEE, 2017.  
 [4]Sorkine O . Differential Representations for Mesh Processing[J]. Computer Graphics Forum, 2006, 25(4):789-807.  
 [5]Lepetit V , Moreno-Noguer F , Fua P . EPnP: An AccurateO(n) Solution to the PnP Problem[J]. International Journal of Computer Vision, 2009, 81(2):155-166.
+
+
+supplementary
+-------------
+<img src="imgs/bezier.gif">  
+<img src="imgs/cubic.png">

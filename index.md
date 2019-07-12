@@ -41,10 +41,10 @@
 
 **结果**：<br/>
 1. 精细唇线提取效果  
-<img src="imgs/lip-line.PNG" width="65%">    
+<img src="imgs/lip-line-1.PNG" width="65%">    
 <br/>
 2. 嘴唇三维重建效果:右侧视频最左是原图，中间是神经网络重建效果，右侧是嘴唇高精度重建结果  
-<img src="imgs/res-compare.PNG" width="50%">
+<img src="imgs/compare-1.PNG" width="50%">
 <img src="imgs/out.gif" width="45%"/>  
 <br/>  
 

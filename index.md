@@ -97,4 +97,5 @@ references
 supplementary
 -------------
 <img src="imgs/bezier.gif">  
-<img src="imgs/cubic.png">
+<img src="imgs/cubic.png">  
+<img src="imgs/curves.PNG">

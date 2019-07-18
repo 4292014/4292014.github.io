@@ -68,22 +68,22 @@
 **方法**：图像检测镜框；以人脸姿态为先验求解眼镜姿态，对齐镜框至正面；以二维像素驱动三维眼镜模板拉普拉斯形变，使变形后的三维眼镜尽可能与二维图像相同<br/>
 程序运行顺序如下：  
 >1. 检测人脸特征点，截取镜框区域，用特征点计算人脸姿态  
->2. 语义边缘检测神经网络检测镜框边缘像素
->3. 按照人脸姿态投影三维模板眼镜；在边缘像素中给投影点找对应点，使对应点云的形状与投影点云尽量相似
->4. 以人脸姿态为优化初始值，以2中对应关系，解优化问题求眼镜姿态；再用眼镜姿态重新投影并计算对应点，迭代上述步骤。最终得眼镜的姿态和三维眼镜投影点的对应点。
+>2. canny算子检测镜框区域边缘
+>3. 按照人脸姿态投影三维模板眼镜；cpd算法配准canny边缘点和模板眼镜投影点。
+>4. 筛选canny边缘点作为镜框边缘像素，以对应关系重新优化人脸姿态，作为眼镜姿态
 >5. 以眼镜姿态正面化对应点，以对应点云的形状驱动三维眼镜模板拉普拉斯变形  
-
-由于不清楚眼镜拉普拉斯变形需要什么信息，因此先探索实现了眼镜的变形，再实现从图像中提取。即先实现了5再实现1-4。目前实现了5,1,234是部分实现。
 
 **关键算法**：  
 >1. 拉普拉斯三维网格变形算法
 >2. 实现基于透视投影模型和点到点对应关系，同时估计物体姿态和相机内参的算法;由EPNP算法求解到眼镜姿态的初值，随后用高斯牛顿法优化初值，得更精准的姿态。
->3. 实现ICP、alpha shape等算法
+>3. cpd算法
 
 **结果**:  
 1. 二维像素驱动的拉普拉斯变形结果  
 <img src="imgs/glass-deform.PNG" width="60%">
 <img src="imgs/glass-after-deform.PNG" width="33%">  
+2. 人脸姿态投影模板眼镜所得点云与canny边缘点配准，按最近点筛选canny边缘点  
+<img src="imgs/12-edge.png">  
 
 references
 ----------
@@ -91,7 +91,8 @@ references
 [2]Xie S, Tu Z. Holistically-Nested Edge Detection[J]. International Journal of Computer Vision, 2015, 125(1-3):3-18.   
 [3]Maninchedda F , Oswald M R , Pollefeys M . Fast 3D Reconstruction of Faces with Glasses[C]// 2017 IEEE Conference on Computer Vision and Pattern Recognition (CVPR). IEEE, 2017.  
 [4]Sorkine O . Differential Representations for Mesh Processing[J]. Computer Graphics Forum, 2006, 25(4):789-807.  
-[5]Lepetit V , Moreno-Noguer F , Fua P . EPnP: An AccurateO(n) Solution to the PnP Problem[J]. International Journal of Computer Vision, 2009, 81(2):155-166.
+[5]Lepetit V , Moreno-Noguer F , Fua P . EPnP: An AccurateO(n) Solution to the PnP Problem[J]. International Journal of Computer Vision, 2009, 81(2):155-166. 
+[6]Myronenko A, Song X. Point Set Registration: Coherent Point Drift[J]. IEEE Transactions on Pattern Analysis & Machine Intelligence, 2010, 32(12):2262-2275.  
 
 
 supplementary
